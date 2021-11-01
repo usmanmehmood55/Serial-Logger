@@ -1,12 +1,17 @@
 # Serial Logger
 
-## Purpose
-Logs single value serial data from available COM ports for specified time, and writes them into a .csv file on the user's desktop. Automatically detects available COM ports.
+### Purpose
+Logs serial data from available COM ports for specified time, and writes them into a .csv file.
 
-## Requirements
+### Requirements
 dotnet 5.0
 
-## To Do
-* Add support for multiple values in single line
-* Add automatic seperator detection
+### Features
+* Can automatically detect available COM ports
+* Can log multiple values in single line, when seperated by commas
+* Always places log file on Desktop for easy access
+
+### To Do
+* Add automatic seperator detection for multiple values in a single line
 * Maybe even a serial plotter as good as Arduino IDE's
+* Turn into a WPF app
