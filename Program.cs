@@ -11,7 +11,7 @@ namespace Serial_Logger
     internal class Program
     {
         private static SerialPort port = new SerialPort();
-        private static List<int> rawData = new List<int>();
+        private static List<string> rawData = new List<string>();
 
         public static void Main(string[] args)
         {
@@ -138,9 +138,9 @@ namespace Serial_Logger
         {
             Console.WriteLine("\nDone.");
             string ret = string.Empty;
-            foreach (int line in rawData)
+            foreach (string line in rawData)
             {
-                ret += Convert.ToString(line) + "\n";
+                ret += line + "\n";
             }
 
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\";
@@ -173,8 +173,8 @@ namespace Serial_Logger
 
                 foreach (string line in lines)
                 {
-                    bool isNumeric = int.TryParse(line, out int n);
-                    if (isNumeric) rawData.Add(n);
+                    if (line.Contains("\n")) line.Replace("\n", string.Empty);
+                    rawData.Add(line);
                     Console.WriteLine(line);
                 }
             }
