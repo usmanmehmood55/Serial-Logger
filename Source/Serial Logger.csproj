@@ -4,7 +4,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Serial_Logger</RootNamespace>
-    <ApplicationIcon>CanIdTool.ico</ApplicationIcon>
+    <ApplicationIcon>Logger.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
