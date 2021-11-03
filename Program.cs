@@ -100,7 +100,7 @@ namespace Serial_Logger
 
             return baudRate;
         }
-
+         
         private static int selectPortNumber(string[] arrPortNames)
         {
             string[] ArrPortNames = SerialPort.GetPortNames();
@@ -182,7 +182,9 @@ namespace Serial_Logger
 
         private static void printIntro()
         {
-            Console.WriteLine("Serial COM port logger, written by Usman in .NET 5.0");
+            Console.WriteLine("Serial COM port logger, written by Usman in .NET Core 3.1");
+            Console.WriteLine("Print serial values in comma seperated format only.");
+            Console.WriteLine("Other formats are not supported yet and will yield random results");
             Console.WriteLine("Report back bugs and issues, and I'll try and fix them");
             Console.WriteLine("Press ctrl + C any time to stop the app\n\n");
         }
