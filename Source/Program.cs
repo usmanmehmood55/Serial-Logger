@@ -15,27 +15,27 @@ namespace Serial_Logger
 
         public static void Main(string[] args)
         {
-            printIntro();
+            PrintIntro();
             string[] portNames = SerialPort.GetPortNames();
             if (portNames.Length > 0)
             {
-                port.PortName = "COM" + selectPortNumber(portNames);
-                port.BaudRate = selectBaudRate();
+                port.PortName = "COM" + SelectPortNumber(portNames);
+                port.BaudRate = SelectBaudRate();
                 port.Parity = Parity.None;
                 port.DataBits = 8;
                 port.StopBits = StopBits.One;
 
-                int recordingDuration = selectRecordingDuration();
+                int recordingDuration = SelectRecordingDuration();
 
                 port.Open();
                 if (port.IsOpen) Console.WriteLine("\nSerial read init");
-                Task t = Task.Run(() => { readSerial(); });
+                Task t = Task.Run(() => { ReadSerial(); });
                 TimeSpan ts = TimeSpan.FromMilliseconds(recordingDuration);
 
                 if (!t.Wait(ts))
                 {
                     port.Close();
-                    writeToFile();
+                    WriteToFile();
                     Console.WriteLine("Press any key to close");
                     Console.ReadLine();
                 }
@@ -48,7 +48,7 @@ namespace Serial_Logger
             }
         }
 
-        private static int selectRecordingDuration()
+        private static int SelectRecordingDuration()
         {
             int recordingDuration = 0;
             bool isSelected = false;
@@ -83,7 +83,7 @@ namespace Serial_Logger
             return recordingDuration;
         }
 
-        private static int selectBaudRate()
+        private static int SelectBaudRate()
         {
             int baudRate = 0;
             bool isSelected = false;
@@ -101,7 +101,7 @@ namespace Serial_Logger
             return baudRate;
         }
          
-        private static int selectPortNumber(string[] arrPortNames)
+        private static int SelectPortNumber(string[] arrPortNames)
         {
             string[] ArrPortNames = SerialPort.GetPortNames();
             List<string> portNames = ArrPortNames.ToList();
@@ -134,7 +134,7 @@ namespace Serial_Logger
             return selectedPortNum;
         }
 
-        private static void writeToFile()
+        private static void WriteToFile()
         {
             Console.WriteLine("\nDone.");
             string ret = string.Empty;
@@ -163,7 +163,7 @@ namespace Serial_Logger
             else Console.WriteLine("No data on serial port");
         }
 
-        private static void readSerial()
+        private static void ReadSerial()
         {
             while (port.IsOpen)
             {
@@ -180,7 +180,7 @@ namespace Serial_Logger
             }
         }
 
-        private static void printIntro()
+        private static void PrintIntro()
         {
             Console.WriteLine("Serial COM port logger, written by Usman in .NET Core 3.1");
             Console.WriteLine("Print serial values in comma seperated format only.");

@@ -1,4 +1,3 @@
-/bin
-/.vs
-/obj
-/Properties
+/Source/bin
+/Source/.vs
+/Source/obj
