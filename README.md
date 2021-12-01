@@ -4,8 +4,7 @@
 Logs serial data from available COM ports for specified time, and writes them into a .csv file.
 
 ### Requirements
-* For building from source, .NET Core 3.1 SDK
-* For running the build, hopefully nothing, as it is self-contained
+* For building from source, .NET Framework 4.7.2
 
 ### Features
 * Can automatically detect available COM ports
@@ -16,4 +15,3 @@ Logs serial data from available COM ports for specified time, and writes them in
 * Add automatic seperator detection for multiple values in a single line
 * Add option for timestamps
 * Maybe even a serial plotter as good as Arduino IDE's
-* Turn into a WPF app
