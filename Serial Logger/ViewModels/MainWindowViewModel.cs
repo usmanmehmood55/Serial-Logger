@@ -1,5 +1,4 @@
-﻿using Microsoft.Win32;
-using Prism.Commands;
+﻿using Prism.Commands;
 using Prism.Mvvm;
 using System.Collections.ObjectModel;
 using System.IO.Ports;

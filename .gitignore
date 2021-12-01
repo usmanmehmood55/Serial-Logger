@@ -1,4 +1,6 @@
 /Serial Logger/bin
 /Serial Logger/obj
 /Serial Logger/Properties
-/.vs/
+/Serial Logger/*.scproj
+/.vs
+/Build
