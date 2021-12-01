@@ -1,5 +1,7 @@
 # Serial Logger
 
+![App Screenshot](App.PNG)
+
 ### Purpose
 Logs serial data from available COM ports for specified time, and writes them into a .csv file.
 
