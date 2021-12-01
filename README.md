@@ -12,6 +12,7 @@ Logs serial data from available COM ports for specified time, and writes them in
 * Always places log file on Desktop for easy access
 
 ### To Do
+* Implement timestamps
+* Implement seperator
 * Add automatic seperator detection for multiple values in a single line
-* Add option for timestamps
 * Maybe even a serial plotter as good as Arduino IDE's
